@@ -1,6 +1,7 @@
-import React, { useState, Suspense  } from 'react';
+import React, {useEffect, useState, Suspense  } from 'react';
 import ModalBox from './ModalBox';
 const CardComments = React.lazy(() => import('./CardComments'));
+import { loadComments,updateComments } from './requests/request';
 
 export default function CardContent({
   title,
@@ -13,6 +14,10 @@ export default function CardContent({
   githubUrl,
 }) {
   const [isShow,setIsShow] = useState(false)
+  const [comments, setComments] = useState([]);
+  useEffect(() => {
+    loadComments(number,setComments);
+  }, []);
   // обработчики нажатия кнопки отображения модального окна
   const handlerModalOpen = () => {
     setIsShow( true) ;
@@ -53,7 +58,7 @@ export default function CardContent({
       {isShow && (
           <ModalBox>
             <Suspense fallback={<div>Загрузка...</div>}>
-              <CardComments onModalClose={handlerModalClose} />
+              <CardComments onModalClose={handlerModalClose} comments={comments}/>
             </Suspense>
           </ModalBox>
         )}
