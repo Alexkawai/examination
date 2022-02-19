@@ -71,13 +71,65 @@ img {border-radius: 50%;}
   justify-content: center;
 }
 .insideModal {
-  background-color: "white";
-  height: 50%;
-  width: 50%;
-  top: 45;
-  left: 45;
+  background-color: rgb(240, 247, 244);
+}
+.closeModal {
+
 }
 #modal-root {
   position: relative;
   z-index: 999;
+}
+.cl-btn-2 {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+.cl-btn-2 div {
+  cursor: pointer;
+  position: relative;  
+  height: 68px;
+  width: 50px;
+}
+.cl-btn-2 .leftright {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #337AB7;
+  border-radius: 2px;
+  transform: rotate(45deg);
+  transition: all .3s ease-in;
+}
+.cl-btn-2 .rightleft {
+  height: 4px;
+  width: 50px;
+  position: absolute;
+  margin-top: 24px;
+  background-color: #337AB7;
+  border-radius: 2px;
+  transform: rotate(-45deg);
+  transition: all .3s ease-in;
+}
+.cl-btn-2 .close-btn {
+  margin: 54px 0 0 -5px;
+  position: absolute;
+  color: #337AB7;
+  font-family: Tahoma, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .3s ease-in;
+  opacity: 0; 
+}
+.cl-btn-2 div:hover .leftright {
+  transform: rotate(-45deg);
+  background-color: #000;
+}
+.cl-btn-2 div:hover .rightleft {
+  transform: rotate(45deg);
+  background-color: #000;
+}
+.cl-btn-2 div:hover .close-btn {
+  opacity: 1;
 }
