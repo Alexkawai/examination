@@ -10,7 +10,8 @@ const MyProjects = (props) => {
         <Link to="/"> Главная </Link>
         <br />
         <Link to="/MyMatirials"> Материалы на курсе</Link>
-
+        <br />
+        <Link to="/GithubComponent"> Обращения в GitHub </Link>
       </header>
       <div align="center" width="500px">
         <h1> Мои проекты </h1>

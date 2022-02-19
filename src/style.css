@@ -1,3 +1,61 @@
-h1, p {
-  font-family: Lato;
+body {
+  font-family: sans-serif;
+}
+.CardContent p{
+  margin: 8px;
+  padding: 5px;
+}
+
+.CardContentopen p.dates,.CardContentclosed p.dates{
+ font-size: smaller;
+ font-style: italic;
+}
+
+.CardContentopen{
+  color: rgb(103, 233, 250);
+}
+
+.CardContentclosed{
+  color: rgb(8, 243, 133);
+  
+}
+.CardContentclosed .body, .CardContentclosed h3{
+  text-decoration: line-through;
+}
+
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #fafafa;
+	padding: 10px;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: 3px;
+	box-shadow: 0px 6px #27ae60;
+	background: #2ecc71;
+  margin: 10px;
+  width:100px;
+  text-align: center;
+}
+a:hover {
+	background: #36d479;
+}
+a:active {
+	position: relative;
+	top: 6px;
+	box-shadow: 0px 0px #23a33d;
+	background: #23a33d;
+}
+img {border-radius: 50%;}
+
+.User {
+  font-family: Arial, Helvetica, sans-serif;
+	color: #fafafa;
+	display: flex;
+  padding:0px;
+	text-decoration: none;
+	border-radius: 3px;
+	background: #2ecc71;
+  text-align: center;
+  align-items:center;
 }

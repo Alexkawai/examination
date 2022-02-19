@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { data } from './data';
 
-import App from './App';
+const App = React.lazy(() => import('./App'));
 const MyMatirials = React.lazy(() => import('./MyMatirials'));
 const MyProjects = React.lazy(() => import('./MyProjects'));
+const GithubComponent = React.lazy(() => import('./GithubComponent'));
 
 const NotFound = () => {
   return <h1>NotFound</h1>;
@@ -14,7 +15,14 @@ const NotFound = () => {
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route
+        path="/"
+        element={
+          <Suspense fallback={<div>Загрузка...</div>}>
+            <App />{' '}
+          </Suspense>
+        }
+      />
 
       <Route
         path="/MyProjects"
@@ -30,6 +38,14 @@ ReactDOM.render(
         element={
           <Suspense fallback={<div>Загрузка...</div>}>
             <MyMatirials />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/GithubComponent"
+        element={
+          <Suspense fallback={<div>Загрузка...</div>}>
+            <GithubComponent />
           </Suspense>
         }
       />
