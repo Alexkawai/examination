@@ -13,13 +13,13 @@ const CardComments = (props) => {
         </div>
         {props.comments.map((item, key) => (
           <div key={key}>
-            <input>{item.body}</input>
+            <input value={item.body} onChange={props.updateComments}/>
             <a> Изменить </a>
             <a> Удалить </a>
           </div>
         ))}
         <div>
-          <input></input>
+        <input value="" onChange={props.updateComments} />
           <a> Добавить </a>
           <button onClick={props.onModalClose}>Закрыть</button>
         </div>

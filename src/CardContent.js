@@ -58,7 +58,7 @@ export default function CardContent({
       {isShow && (
           <ModalBox>
             <Suspense fallback={<div>Загрузка...</div>}>
-              <CardComments onModalClose={handlerModalClose} comments={comments}/>
+              <CardComments onModalClose={handlerModalClose} comments={comments} updateComments={updateComments}/>
             </Suspense>
           </ModalBox>
         )}
