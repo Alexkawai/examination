@@ -4,27 +4,25 @@ const CardComments = (props) => {
   return (
     <div className="modal">
       <div className="insideModal">
-
-<div class="cl-btn-2" onClick={props.onModalClose}>
-    <div>
-        <div class="leftright"></div>
-        <div class="rightleft"></div>
-        <span class="close-btn">закрыть</span>
-    </div>
-</div>
+        <div class="cl-btn-2" onClick={props.onModalClose}>
+          <div>
+            <div class="leftright"></div>
+            <div class="rightleft"></div>
+            <span class="close-btn">закрыть</span>
+          </div>
+        </div>
         {props.comments.map((item, key) => (
           <div key={key}>
-            <textarea>{item.body}</textarea>
-            <a>Изменить</a>
-            <a>Удалить</a>
+            <input>{item.body}</input>
+            <a> Изменить </a>
+            <a> Удалить </a>
           </div>
         ))}
         <div>
-          <textarea>{item.body}</textarea>
-          <a>Добавить</a>
+          <input></input>
+          <a> Добавить </a>
           <button onClick={props.onModalClose}>Закрыть</button>
         </div>
-        
       </div>
     </div>
   );
