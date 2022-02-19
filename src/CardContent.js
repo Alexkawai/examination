@@ -1,15 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense  } from 'react';
 import ModalBox from './ModalBox';
-const ModalContextComponent = (props) => {
-  // получаем обработчик закрытия окна
-  return (
-    <div className="modal">
-      <img src="https://image.shutterstock.com/image-photo/snowman-gentleman-winter-black-hat-260nw-763595347.jpg"/>
-      
-      <button onClick={props.onModalClose}>Close Modal</button>
-    </div>
-  );
-};
+const CardComments = React.lazy(() => import('./CardComments'));
+
 export default function CardContent({
   title,
   body,
@@ -60,7 +52,9 @@ export default function CardContent({
       <a onClick={handlerModalOpen}>Комментарии</a>
       {isShow && (
           <ModalBox>
-            <ModalContextComponent onModalClose={handlerModalClose} />
+            <Suspense fallback={<div>Загрузка...</div>}>
+              <CardComments onModalClose={handlerModalClose} />
+            </Suspense>
           </ModalBox>
         )}
     </div>
