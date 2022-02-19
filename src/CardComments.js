@@ -4,11 +4,11 @@ const CardComments = (props) => {
   return (
     <div className="modal">
       <div className="insideModal">
-        <div class="cl-btn-2" onClick={props.onModalClose}>
+        <div className="cl-btn-2" onClick={props.onModalClose}>
           <div>
-            <div class="leftright"></div>
-            <div class="rightleft"></div>
-            <span class="close-btn">закрыть</span>
+            <div className="leftright"></div>
+            <div className="rightleft"></div>
+            <span className="close-btn">закрыть</span>
           </div>
         </div>
         {props.comments.map((item, key) => (

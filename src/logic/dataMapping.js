@@ -16,7 +16,7 @@ export function dataMapper(issues, columns) {
         closedAt={el.closed_at}
         user={el.user}
         number={el.number}
-        githubUrl={el.url}
+        githubUrl={el.html_url}
       />
     ),
   }));
