@@ -7,7 +7,7 @@ import './style.css';
 import { onDragEnd } from './logic/dragAndDrop';
 
 // **Модуль для fetch-запросов**
-import { loadIssues, updateIssues } from './requests/request';
+import { loadIssues, updateIssues, loadComments,updateComments } from './requests/request';
 
 import { dataMapper } from './logic/dataMapping';
 // **Содержимое каждой карточки**
@@ -29,12 +29,19 @@ const columnsFromBackend = {
 export default function GithubComponent() {
   // **Состояние для котображения колонок**
   const [columns, setColumns] = useState(columnsFromBackend);
+
   // **Состояние для  Issues**
   const [issues, setIssues] = useState([]);
+
+  const [comments, setComments] = useState([]);
+
 
   // **Загрузка данных при монтировнии (аналогично componentDidMount)**
   useEffect(() => {
     loadIssues(setIssues);
+  }, []);
+  useEffect(() => {
+    loadComments(setComments);
   }, []);
 
   // **Изменение состояния колонок при изменении issues**
@@ -148,6 +155,8 @@ export default function GithubComponent() {
           })}
         </DragDropContext>
       </div>
+      {/* условный рендеринг компонента-обертки с модальным окном в потомках */}
+     
     </div>
   );
 }
