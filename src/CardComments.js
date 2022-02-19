@@ -19,9 +19,9 @@ const CardComments = (props) => {
           </div>
         ))}
         <div>
+          <hr />
         <input value="" onChange={props.updateComments} />
           <a> Добавить </a>
-          <button onClick={props.onModalClose}>Закрыть</button>
         </div>
       </div>
     </div>
