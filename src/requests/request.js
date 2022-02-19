@@ -60,7 +60,7 @@ export function updateIssues(state, issue_number, cbk) {
     });
 }
 export function loadComments(issueNumber,cbk) {
-   fetch(myUrl+{issueNumber}+`/comments` + `?state=all`, {
+   fetch(myUrl+`/`+issueNumber+`/comments?state=all`, {
      cache: "no-store",
      method: "GET",
      headers: {
@@ -69,7 +69,7 @@ export function loadComments(issueNumber,cbk) {
    })
      .then((result) => result.json())
      .then((data) => {
-       console.log(`Got data from ${myUrl} ${JSON.stringify(data)}`);
+       console.log(`Got data from ${myUrl}/${issueNumber}/comments ${JSON.stringify(data)}`);
        //async
        cbk && cbk(data);
      });
